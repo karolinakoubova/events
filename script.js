@@ -30,6 +30,8 @@ class Event {
                 <h3 class="event-name">${this.name}</h3>
                 <p>${this.date}</p>
                 <p>${this.description}</p>
+                <button class="register-btn">REGISTER</button>
+                
             </div>
         `;
         return eventCard;
@@ -78,17 +80,20 @@ const loadData = async () => {
     } catch (error) {
         console.error("Error fetching event data:", error);
     }
-}
-// Call the function to load data when the page is ready
-loadData();
-
-
-const modal = document.getElementById("registerModal");
-        const btn = document.querySelector(".register-btn");
+    const modal = document.getElementById("registerModal");
+        // const btn = document.querySelector(".register-btn");
+        const buttons = document.querySelectorAll(".register-btn")
         const span = document.getElementsByClassName("close")[0];
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
+        // btn.onclick = function() {
+        //     modal.style.display = "block";
+        // }
+
+        buttons.forEach((btn) => {
+            btn.addEventListener('click', function(event) {
+                event.preventDefault()
+                modal.style.display = "block"
+            });
+        });
 
         span.onclick = function() {
             modal.style.display = "none";
@@ -127,3 +132,9 @@ const modal = document.getElementById("registerModal");
                 alert('There was a problem with your registration. Please try again.');
             });
         };
+}
+// Call the function to load data when the page is ready
+loadData();
+
+// I TRANSFERED THE MODAL INTO THE LOADDATA FUNCTION
+
