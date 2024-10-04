@@ -98,70 +98,38 @@ body {
     font-size: 16px;
 }
 
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
 
-.contact-section {
-    background-color: white;
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
     padding: 30px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid #000000;
+    width: 80%; 
     border-radius: 8px;
 }
 
-.contact-section h2 {
-    text-align: center;
-    color: black;
-    margin-bottom: 20px;
-}
-
-.contact-section p {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #6B7280;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
     font-weight: bold;
 }
 
-input[type="text"],
-input[type="mobile"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-textarea {
-    resize: vertical;
-}
-
-.checkbox-group {
-    margin-bottom: 15px;
-}
-
-.checkboxes input {
-    margin-right: 10px;
-}
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #98040b;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
     cursor: pointer;
-}
-
-button:hover {
-    background-color: #b10a15;
 }

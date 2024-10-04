@@ -105,3 +105,53 @@ loadData();
 
 
 
+// const eventName = document.querySelector(".event-name")
+// // fetching data from the api
+// const loadData = async () => {
+//     const response = await fetch('https://test-api.codingbootcamp.cz/api/147c6eae/events');
+//     const data = await response.json();
+// console.log(data)
+//  eventName.innerHTML = data[1].name
+ 
+// }
+
+// loadData()
+
+
+const modal = document.getElementById("registerModal");
+const btn = document.querySelector(".register-btn");
+const span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+
+document.getElementById("registrationForm").onsubmit = function(event) {
+    event.preventDefault();
+
+    const formData = new FormData(this);
+    
+    fetch(this.action, {
+        method: this.method,
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        modal.style.display = "none"; 
+        alert('Registration successful!'); 
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+};
