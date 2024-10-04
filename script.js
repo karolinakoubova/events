@@ -1,16 +1,4 @@
 
-// const eventName = document.querySelector(".event-name")
-// // fetching data from the api
-// const loadData = async () => {
-//     const response = await fetch('https://test-api.codingbootcamp.cz/api/147c6eae/events');
-//     const data = await response.json();
-// console.log(data)
-//  eventName.innerHTML = data[1].name
- 
-// }
-
-// loadData()
-
 // / Event class definition
 class Event {
     constructor(id, name, date, description, image_url) {
@@ -27,26 +15,18 @@ class Event {
         eventCard.innerHTML = `
             <img src="${this.image_url}" alt="${this.name}">
             <div class="event-info">
+            <div>
                 <h3 class="event-name">${this.name}</h3>
                 <p>${this.date}</p>
                 <p>${this.description}</p>
+            </div>
+            <div>
                 <button class="register-btn">REGISTER</button>
-                
+              </div>  
             </div>
         `;
         return eventCard;
     }
-    // createFeatured() {
-    //     const featuredCard = document.createElement('div');
-    //     eventCard.classList.add('featured-event');
-    //     featuredCard.innerHTML = `<img src="${this.image_url}" alt="${this.name}">
-    //         <div class="event-info">
-    //             <h3 class="event-name">${this.name}</h3>
-    //             <p>${this.date}</p>
-    //             <p>${this.description}</p>
-    //             <a href="#" class="register-btn">REGISTER</a>
-    //         </div>`
-    //         return featuredCard
     }
 
     
@@ -69,8 +49,6 @@ const loadData = async () => {
                 eventData.description,
                 eventData.image_url
             );
-            // const featuredCard = event.createFeatured()
-            // eventsGrid.appendChild(featuredCard)
             // Create the HTML card using the method inside the Event class
             const eventCard = event.createEventCard();
             // Append the generated card to the container
