@@ -59,7 +59,43 @@
                 <p>04.11.2024, O2 Arena, Prague</p>
             </div>
         </div>
+    </section>
 
+    <section class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Please let us know your query and fill out the form below.</p>
+        <form action="#">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Work Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Phone Number</label>
+                <input type="mobile" id="mobile" name="mobile" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <div class="checkbox-group">
+                <label>Age Verification</label>
+                <div class="checkboxes">
+                    <input type="checkbox" id="oldEnough" name="ageVerification">
+                    <label for="oldEnough">I'm old enough to participate.</label>
+                    <input type="checkbox" id="notOldEnough" name="ageVerification">
+                    <label for="notOldEnough">I'm not old enough to participate.</label>
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
     </section>
 <script src="script.js"></script>
 </body>

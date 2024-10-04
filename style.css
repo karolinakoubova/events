@@ -97,3 +97,71 @@ body {
     color: #555;
     font-size: 16px;
 }
+
+
+.contact-section {
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.contact-section h2 {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #6B7280;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="mobile"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.checkbox-group {
+    margin-bottom: 15px;
+}
+
+.checkboxes input {
+    margin-right: 10px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #98040b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b10a15;
+}
