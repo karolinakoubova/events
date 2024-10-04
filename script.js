@@ -84,39 +84,46 @@ loadData();
 
 
 const modal = document.getElementById("registerModal");
-const btn = document.querySelector(".register-btn");
-const span = document.getElementsByClassName("close")[0];
+        const btn = document.querySelector(".register-btn");
+        const span = document.getElementsByClassName("close")[0];
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
 
-span.onclick = function() {
-    modal.style.display = "none";
-}
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
 
-window.onclick = function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-}
+        document.getElementById("registrationForm").onsubmit = function(event) {
+            event.preventDefault();
 
-document.getElementById("registrationForm").onsubmit = function(event) {
-    event.preventDefault();
+            const formData = new FormData(this);
+            
+            const apiUrl = "https://test-api.codingbootcamp.cz/api/9c7ab652/events/1/registrations"; 
 
-    const formData = new FormData(this);
-    
-    fetch(this.action, {
-        method: this.method,
-        body: formData,
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        modal.style.display = "none"; 
-        alert('Registration successful!'); 
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-};
+            fetch(apiUrl, {
+                method: "POST",
+                body: formData,
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                modal.style.display = "none";
+                alert('Registration successful!');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was a problem with your registration. Please try again.');
+            });
+        };
