@@ -139,3 +139,22 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
+
+input{
+    width: 100%; 
+    padding: 8px; 
+    margin: 5px 0;
+    border: 1px solid gray; 
+    border-radius: 5px; 
+    font-size: 16px; 
+}
+
+.checkbox-group {
+    display: flex;
+    margin: 10px; 
+}
+
+#ageVerification{
+    position: relative;
+    right:-290px;
+}
